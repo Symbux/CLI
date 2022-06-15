@@ -1,0 +1,32 @@
+{
+  "name": "@symbux/cli",
+  "version": "0.1.0",
+  "description": "The command-line utility for all @symbux scoped projects.",
+  "main": "lib/index.js",
+  "repository": "git@github.com:Symbux/CLI.git",
+  "author": "Symbux Dev <hello@symbux.dev> (https://symbux.dev)",
+  "license": "Apache-2.0",
+  "private": false,
+  "bin": {
+    "turbo-cli": "lib/index.js"
+  },
+  "scripts": {
+    "watch": "tsc --watch",
+    "build": "rm -rf lib && tsc",
+    "lint": "eslint . --ext .ts",
+    "prepublishOnly": "yarn lint && yarn build",
+    "changelog": "auto-changelog --template keepachangelog --commit-limit false --hide-credit"
+  },
+  "devDependencies": {
+    "@types/colors": "^1.2.1",
+    "@types/node": "^17.0.44",
+    "@typescript-eslint/eslint-plugin": "^5.28.0",
+    "@typescript-eslint/parser": "^5.28.0",
+    "eslint": "^8.17.0",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.3"
+  },
+  "dependencies": {
+    "colors": "^1.4.0"
+  }
+}
